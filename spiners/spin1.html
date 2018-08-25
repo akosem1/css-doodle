@@ -1,0 +1,32 @@
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>spines...</title>
+	<script src="../css-doodle.min.js"></script>
+</head>
+<body>
+
+
+	<css-doodle style="position: relative; top: 100px; ">
+
+:doodle {
+  @grid: @r(1000,10000)x1 / 80%;
+}
+
+
+@place-cell: center;
+@size: calc(40% / @size() * @i());
+
+transition: transform 100s ease;
+
+transform: rotate(calc(@i() * 5deg));
+
+border-radius: 30%;
+border: 1px solid hsla( calc(10 + 4 * @i()), 70%, 68%, @r(.8) );
+
+
+</css-doodle>	
+
+</body>
+</html>

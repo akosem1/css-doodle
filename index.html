@@ -1,0 +1,338 @@
+<!-- https://css-doodle.com/ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css-doodle-semple</title>
+</head>
+
+<script src="css-doodle.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.4.8/css-doodle.min.js"></script> -->
+
+<body>
+
+
+<section>
+	<h2><span>#1</span> Click me To move faster </h2>
+	<css-doodle  class="click-to-update auto-run" style="width: 30%;">
+		:doodle {
+			@grid: 5 / 8em;
+		}
+
+		background: hsla(calc(240 - 6 * @row() * @col()), 70%, 68%, @r(.8));
+		transform: scale(@rand(.2, .9));
+	</css-doodle>
+</section>
+
+<section>
+	<h2><span>#2</span> Click me </h2>
+	<css-doodle class="click-to-update">
+
+		:doodle {
+			@grid: 18 / 98vmax;
+			background: #0a0c27;
+		}
+
+		--hue: calc(100 + @r(1, 50) * @row() * @col());
+		background: hsl(var(--hue), 50%, 70%);
+		margin: 0.5px;
+		transition: @r(0.1s, 7s) ease;
+		clip-path: clover(@pick('0 0, 100% 0, 100% 100%','0 0, 100% 0, 0 100%','0 0, 100% 100%, 0 100%','100% 0, 100% 100%, 0 100%'));
+
+		:after {
+			content: @index();
+			color: #ffffff50;
+		}
+
+	</css-doodle>
+</section>
+
+<section>
+	<h2><span>#3</span></h2>
+	<css-doodle style="transform: rotate(-90deg); width: 30%; ">
+	:doodle {
+		@grid: 18 / 98vmax;
+		background: #0a0c27;
+	}
+
+	--hue: calc(50 + 1.5 * @row() * @col());
+	background: hsl(var(--hue), 50%, 70%);
+	margin: -0.5px;
+	transition: @r(.5s) ease;
+	clip-path: clover(@pick('0 0, 100% 0, 100% 100%','0 0, 100% 0, 0 100%','0 0, 100% 100%, 0 100%','100% 0, 100% 100%, 0 100%'));
+	</css-doodle>
+</section>
+
+<section>
+	<h2><span>#4</span> Click me </h2>
+	<css-doodle  class="click-to-update">
+		:doodle {
+			@grid: 7 ;
+			background: transparent;
+		}
+
+		@shape:   ;
+		opacity: @r(0.2, 0.8);
+		background-image: url(bg.jpg);
+		transform: scale(@r(0, 1)) rotate(@r(-180deg, 180deg));
+	</css-doodle>
+</section>
+
+<section>
+	<h2><span>#5</span> Click me </h2>
+	<css-doodle  class="click-to-update">
+		:doodle {
+			@grid: 18 / 100vmax;
+			background: #0a0c27;
+		}
+
+		--hue: calc(180 + 1.5 * @row() * @col());
+		background: hsl(var(--hue), 50%, 70%);
+		margin: -.5px;
+		transition: @r(.5s) ease;
+		clip-path: polygon(@pick('0 0, 100% 0, 100% 100%','0 0, 100% 0, 0 100%','0 0, 100% 100%, 0 100%','100% 0, 100% 100%, 0 100%'));
+	</css-doodle>
+</section>
+
+<section>
+	<h2><span>#6</span> Click me To move faster </h2> 
+	<css-doodle grid="50x1"  class="click-to-update auto-run" style="transform: rotate(-90deg); width: 30%; ">
+		:doodle {
+			grid-row-gap: 1px;
+		}
+
+		--hue: calc(1 * @row() * 2 * @col());
+		background: hsl(var(--hue), 50%, 70%);
+		width: @rand(5%, 100%);  from 5% to 100% by random ;
+	</css-doodle>
+
+</section>
+
+<section>
+	<h2><span>#7</span> Click me </h2>
+	<css-doodle  class="click-to-update" style="width: 30%; ">
+		:doodle {
+			@grid: 8 / 90%;
+			@shape: circle;
+		}
+
+		transition: .2s @r(.6s);
+		border-radius: @pick(100% 0, 0 100%);
+		border: solid 1px #A10AB7;
+		will-change: transform;
+		transform: scale(@r(.25, 1.25));
+		background: hsla(calc(240 - 6 * @row() * @col()),70%, 68%, @r(.8));
+	</css-doodle>	
+</section>
+
+<section>
+	
+<h2><span>#8</span> Click me OR Move the mouse</h2>
+	<css-doodle  class="click-to-update" style="width: 35%; ">
+		:doodle {
+			@grid: 5 ;
+			@shape: circle;
+			background: #000000;
+		}
+
+		@even {
+			@shape: hypocycloid 3;
+			background-image: radial-gradient(at calc(100% * var(--mouse-x))calc(100% * var(--mouse-y)), #2196f3 10%, #e91e63 70%);
+			transform: scale(1.5) rotate(@r(-60deg, 60deg));
+
+			:after {
+				content: E-M-S;
+				color: #ffffff;
+				font-size: 10px;
+				margin-left: -5px;
+			}
+		}
+
+
+
+	</css-doodle>	
+</section>
+		
+<section>
+	<h2><span>#9</span> Click me </h2>
+	<css-doodle  class="click-to-update" style="width: 30%; ">
+		:doodle { --s: 0 }
+		:doodle(:hover) { --s: 1 }
+
+		:doodle {
+			@grid: 7 / 8em;
+			@shape: star;
+			background: #0116D8;
+		}
+
+		@even {
+			@shape: star ;
+			background: hsla(calc(0),100%, 40%, @r(0.5, 1));
+			transform: scale(@r(.25, 1.25)) rotate(@r(-120deg, 120deg));
+	</css-doodle>	
+</section>
+
+<section>
+	<h2><span>#10</span> Click me To move faster </h2>
+	<css-doodle  class="click-to-update auto-run" style="width: 30%; ">
+		:doodle {
+			@grid: 10;
+			@shape: heart;
+			background: #FF0000;
+		}
+
+		@even {
+			@shape: heart ;
+			background: hsla(calc(0),100%, 40%, @r(0.5, 1));
+			transform: scale(@r(.25, 1.25)) ;
+			transition: width 1s;
+		}
+
+		:hover{
+			width: 150%;
+			top: 5px;
+		}
+	</css-doodle>	
+</section>
+
+<section>
+	<h2><span>#11</span> Click me </h2>
+	<css-doodle  class="click-to-update" style="width: 100%; height: 70%;">
+		:doodle {
+			@grid: 9 / 85%;
+			@shape: circle;
+			background: rgb(@rand(0, 255), @rand(0, 255), @rand(0, 255));
+		}
+
+		will-change: transform;
+		transition: 1s @r(2s);
+		transform: rotate(@r(360deg));
+		@shape: infinity;
+		background: rgb(@rand(0, 255), @rand(0, 255), @rand(0, 255));
+	</css-doodle>	
+</section>
+
+<section>
+	<h2><span>#12</span> Click me </h2>
+	<a href="spin.html" target="_blank">click here</a>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section>
+<h2><span>#13 DDD</span>  </h2>
+
+	<css-doodle>
+  :doodle {
+    @grid: 1 ;
+    background: transparent;
+  }
+  @shape:  star ;
+  opacity: 1;
+    background: #000000;
+
+  background-image: radial-gradient(
+		at calc(100% * var(--mouse-x))calc(100% * var(--mouse-y)), #EAB71B 10%, #FFFFFF00 30%);
+
+
+		 width: 350px;
+		 height: 350px;
+
+
+</css-doodle>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section>
+	<h2><span>#DD</span> Click me </h2>
+	<css-doodle  class="click-to-update" style="width: 30%; ">
+
+	</css-doodle>	
+</section>
+
+
+</body>
+
+
+<style>
+
+	section{
+		width: 80%;
+		margin: 1rem auto;
+		height: 400px;
+		padding: 2rem;
+		border: solid 1px #000;
+	}
+
+	css-doodle{
+		 width: 100%;
+		 height: 350px;
+	}
+
+	.click-to-update{
+		cursor: pointer ;
+	}
+
+</style>
+
+
+<script>
+
+	var root = document.documentElement;
+	document.addEventListener('mousemove', evt =>{
+		let x = evt.clientX / innerWidth;
+		let y = evt.clientY / innerHeight;
+		root.style.setProperty('--mouse-x', x);
+		root.style.setProperty('--mouse-y', y);
+	});
+
+	document.addEventListener("DOMContentLoaded", function(event) {
+	    document.addEventListener('click', function(e) {
+	        if (e.target.matches('css-doodle.click-to-update')) {
+	            e.target.update();
+	        }
+	        // if (e.target.update && e.target.closest('.example')) {
+	        //     e.target.update();
+	        // }
+	    });
+
+		setInterval(function(){ 
+			var autorun = document.getElementsByClassName('auto-run');
+			for (var i=0;i<autorun.length; i++) {
+				autorun[i].click();
+			}
+		}, 300);
+	});
+
+</script>
+
+</html>

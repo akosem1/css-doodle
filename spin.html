@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>spines...</title>
+	<!-- <script src="css-doodle.min.js"></script> -->
+</head>
+<body>
+
+
+
+<!-- <section> -->
+	<!-- <h2><span>Spiner</span> </h2> -->
+
+
+<!-- <iframe src="spiners/spin2.html" style="width: 100%; height: 500px; border: 0;"></iframe> -->
+
+<!-- </section> -->
+
+	
+
+<button id="createIframe1">Create Iframe 1</button>
+<button id="createIframe2">Create Iframe 2</button>
+<button id="createIframe3">Create Iframe 3</button>
+<button id="createIframe4">Create Iframe 4</button>
+
+</body>
+
+
+<style>
+/* 
+	section{
+		padding: 7rem;
+	}
+ */
+
+
+	body{
+		padding: 3rem;
+	}
+
+	css-doodle{
+		 width: 100%;
+		 height: 500px;
+	}
+
+	.click-to-update{
+		cursor: pointer ;
+	}
+
+
+
+</style>
+
+
+<script>
+
+// var section = document.getElementsByTagName('section');
+	
+	document.getElementById('createIframe1').onclick = function() {
+		clearBody();
+		var iframe1 = document.createElement('iframe');
+		iframe1.src = 'spiners/spin1.html';
+		iframe1.style="width: 100%; height: 600px; border: 0;";
+		document.body.appendChild(iframe1);
+	};
+
+	document.getElementById('createIframe2').onclick = function() {
+		clearBody();
+		var iframe2 = document.createElement('iframe');
+		iframe2.src = 'spiners/spin2.html';
+		iframe2.style="width: 100%; height: 600px; border: 0;";
+		document.body.appendChild(iframe2);
+	};
+
+	document.getElementById('createIframe3').onclick = function() {
+		clearBody();
+		var iframe3 = document.createElement('iframe');
+		iframe3.src = 'spiners/spin3.html';
+		iframe3.style="width: 100%; height: 600px; border: 0;";
+		document.body.appendChild(iframe3);
+	};
+
+	document.getElementById('createIframe4').onclick = function() {
+		clearBody();
+		var iframe4 = document.createElement('iframe');
+		iframe4.src = 'spiners/spin4.html';
+		iframe4.style="width: 100%; height: 500px; border: 0;";
+		document.body.appendChild(iframe4);
+	};
+
+
+
+function clearBody() {
+  
+
+
+
+    var element = document.getElementsByTagName("button"), index;
+
+for (index = element.length - 1; index >= 0; index--) {
+    element[index].parentNode.removeChild(element[index]);
+}
+}
+
+</script>
+
+
+
+</html>
